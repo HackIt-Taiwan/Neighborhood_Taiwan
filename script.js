@@ -186,6 +186,117 @@ class SmoothScrollManager {
     }
 }
 
+// 影片管理系統
+class VideoManager {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.setupVideoThumbnails();
+    }
+
+    setupVideoThumbnails() {
+        const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+        
+        videoThumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', (e) => {
+                this.handleVideoClick(e, thumbnail);
+            });
+
+            // 鍵盤無障礙支援
+            thumbnail.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.handleVideoClick(e, thumbnail);
+                }
+            });
+
+            // 添加 tabindex 使其可聚焦
+            thumbnail.setAttribute('tabindex', '0');
+            thumbnail.setAttribute('role', 'button');
+        });
+    }
+
+    handleVideoClick(e, thumbnail) {
+        e.preventDefault();
+        
+        const videoId = thumbnail.getAttribute('data-video-id');
+        const eventCard = thumbnail.closest('.event-card');
+        
+        // 添加點擊動畫效果
+        thumbnail.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            thumbnail.style.transform = '';
+        }, 150);
+
+        // 提供兩種選擇：嵌入播放或新視窗開啟
+        this.showVideoOptions(videoId, eventCard);
+    }
+
+    showVideoOptions(videoId, eventCard) {
+        const modal = this.createVideoModal(videoId);
+        document.body.appendChild(modal);
+        
+        // 添加顯示動畫
+        requestAnimationFrame(() => {
+            modal.classList.add('show');
+        });
+
+        // ESC 鍵關閉
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') {
+                this.closeVideoModal(modal);
+                document.removeEventListener('keydown', handleEscape);
+            }
+        };
+        document.addEventListener('keydown', handleEscape);
+    }
+
+    createVideoModal(videoId) {
+        const modal = document.createElement('div');
+        modal.className = 'video-modal';
+        modal.innerHTML = `
+            <div class="video-modal-content">
+                <div class="video-modal-header">
+                    <h3>觀看影片</h3>
+                    <button class="video-modal-close" aria-label="關閉">&times;</button>
+                </div>
+                <div class="video-embed-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
+                        frameborder="0" 
+                        allowfullscreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                    </iframe>
+                </div>
+                <div class="video-modal-footer">
+                    <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="btn-outline">
+                        在 YouTube 開啟
+                    </a>
+                </div>
+            </div>
+            <div class="video-modal-overlay"></div>
+        `;
+
+        // 綁定關閉事件
+        const closeBtn = modal.querySelector('.video-modal-close');
+        const overlay = modal.querySelector('.video-modal-overlay');
+        
+        closeBtn.addEventListener('click', () => this.closeVideoModal(modal));
+        overlay.addEventListener('click', () => this.closeVideoModal(modal));
+
+        return modal;
+    }
+
+    closeVideoModal(modal) {
+        modal.classList.add('hide');
+        setTimeout(() => {
+            modal.remove();
+        }, 300);
+    }
+}
+
 // 載入動畫管理
 class LoadingAnimationManager {
     constructor() {
@@ -218,13 +329,37 @@ class LoadingAnimationManager {
             });
         }, observerOptions);
 
-        // 觀察卡片、步驟等元素
-        const elements = document.querySelectorAll('.card, .step-item, .event-card, .cta-section');
+        // 觀察卡片、步驟等元素 (排除事件卡片，因為它們有自己的動畫)
+        const elements = document.querySelectorAll('.card, .step-item, .cta-section');
         elements.forEach((el, index) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
             observer.observe(el);
+        });
+
+        // 為事件卡片添加特殊的進入動畫（較輕微）
+        const eventCards = document.querySelectorAll('.event-card');
+        eventCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(15px)';
+            card.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
+            
+            // 為事件卡片使用更寬鬆的觀察選項
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        cardObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.05,
+                rootMargin: '0px 0px -20px 0px'
+            });
+            
+            cardObserver.observe(card);
         });
     }
 }
@@ -281,6 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new ThemeManager();
     new MobileMenuManager();
     new SmoothScrollManager();
+    new VideoManager();
     new LoadingAnimationManager();
     new PerformanceManager();
 });

@@ -114,20 +114,20 @@ body {
 .mobile-menu-toggle {
     display: none;
     position: fixed;
-    top: 15px;
-    left: 15px;
+    top: 20px; /* 增加上邊距 */
+    left: 20px; /* 增加左邊距 */
     z-index: 1001;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    width: 44px;
-    height: 44px;
+    width: 46px; /* 稍微增加大小讓點擊更容易 */
+    height: 46px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px var(--shadow-color);
+    box-shadow: 0 3px 10px var(--shadow-color); /* 增加陰影 */
 }
 
 .mobile-menu-toggle span {
@@ -506,10 +506,12 @@ em {
 .event-card {
     background-color: var(--bg-warm);
     border-radius: 12px;
-    padding: 20px;
+    overflow: hidden;
     box-shadow: 0 3px 10px var(--shadow-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .event-card:hover {
@@ -517,14 +519,234 @@ em {
     box-shadow: 0 8px 20px var(--shadow-color);
 }
 
-.event-card h3 {
+.event-video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.video-thumbnail:hover {
+    transform: scale(1.02);
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.video-thumbnail:hover img {
+    opacity: 0.8;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    opacity: 0.9;
+}
+
+.video-thumbnail:hover .play-button {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+}
+
+.event-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-content h3 {
     margin-top: 0;
     border-bottom: 2px solid rgba(236, 55, 80, 0.3);
     padding-bottom: 8px;
+    margin-bottom: 12px;
 }
 
-.event-card p {
-    margin-bottom: 0;
+.event-content p {
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.watch-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-top: auto;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+    background-color: transparent;
+    align-self: flex-start;
+}
+
+.watch-link:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateX(3px);
+}
+
+.watch-icon {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.watch-link:hover .watch-icon {
+    transform: scale(1.2);
+}
+
+.watch-link:hover:after {
+    width: 0;
+}
+
+/* 影片模態框樣式 */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.video-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.video-modal.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.video-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.video-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-color);
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+}
+
+.video-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--card-bg);
+}
+
+.video-modal-header h3 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.video-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.video-modal-close:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.video-embed-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background: #000;
+}
+
+.video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-modal-footer {
+    padding: 15px 20px;
+    background: var(--card-bg);
+    text-align: center;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-outline:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline:hover:after {
+    width: 0;
 }
 
 /* 需求列表樣式 */
@@ -684,11 +906,11 @@ ol li::marker {
     }
     
     .theme-toggle {
-        top: 15px;
-        right: 70px;
-        width: 44px;
-        height: 44px;
-        font-size: 1rem;
+        top: 20px; /* 與漢堡選單對齊 */
+        right: 20px; /* 增加右邊距 */
+        width: 46px; /* 與漢堡選單大小一致 */
+        height: 46px;
+        font-size: 1.1rem; /* 稍微增加圖標大小 */
     }
     
     .container {
@@ -699,12 +921,13 @@ ol li::marker {
         position: fixed;
         top: 0;
         left: -100%;
-        width: 300px;
+        width: 320px; /* 增加寬度讓內容更舒適 */
         height: 100vh;
         transition: left 0.3s ease;
         z-index: 999;
         box-shadow: 3px 0 20px var(--shadow-color);
-        padding: 20px;
+        padding: 30px; /* 增加內邊距讓更透氣 */
+        padding-top: 35px; /* 頂部額外間距 */
     }
     
     .sidebar.open {
@@ -731,13 +954,13 @@ ol li::marker {
     
     .content {
         margin-left: 0;
-        padding: 80px 20px 30px;
+        padding: 100px 20px 30px; /* 增加頂部內邊距避免被導航遮擋 */
         width: 100%;
     }
     
     nav ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 25px; /* 大幅增加項目間距 */
     }
     
     nav li {
@@ -750,26 +973,63 @@ ol li::marker {
     }
     
     nav li.divider {
-        margin: 20px 0;
+        margin: 35px 0; /* 大幅增加分隔線間距 */
         height: 1px;
     }
     
     nav a {
-        padding: 12px 16px;
-        font-size: 1rem;
+        padding: 16px 20px; /* 進一步增加內邊距 */
+        font-size: 1.05rem; /* 稍微增加字體大小 */
+        line-height: 1.5; /* 增加行高讓文字更透氣 */
+        margin-bottom: 5px; /* 添加下邊距 */
     }
     
     .logo {
-        margin-bottom: 30px;
+        margin-bottom: 45px; /* 大幅增加Logo下方間距 */
     }
     
     .logo img {
-        max-width: 160px;
+        max-width: 170px; /* 稍微增加Logo大小 */
     }
     
     .events-grid {
         grid-template-columns: 1fr;
         gap: 15px;
+    }
+    
+    .event-video-container {
+        padding-bottom: 50%; /* 調整移動端縮略圖比例 */
+    }
+    
+    .play-button svg {
+        width: 56px;
+        height: 40px;
+    }
+    
+    .event-content {
+        padding: 15px;
+    }
+    
+    .watch-link {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+    
+    .video-modal-content {
+        width: 95%;
+        max-height: 85vh;
+    }
+    
+    .video-modal-header {
+        padding: 15px;
+    }
+    
+    .video-modal-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .video-modal-footer {
+        padding: 12px 15px;
     }
     
     .requirements-list li {
@@ -809,8 +1069,14 @@ ol li::marker {
     }
     
     .global-link-container {
-        margin-top: 20px;
-        padding-top: 15px;
+        margin-top: 35px; /* 大幅增加上方間距 */
+        padding-top: 25px; /* 增加內邊距 */
+    }
+    
+    .global-link {
+        padding: 16px 20px; /* 增加全球連結的內邊距 */
+        font-size: 1rem; /* 調整字體大小 */
+        margin-top: 10px; /* 添加上邊距 */
     }
     
     .header-section h1 {
@@ -824,7 +1090,35 @@ ol li::marker {
 
 @media (max-width: 480px) {
     .content {
-        padding: 25px 15px;
+        padding: 110px 15px 25px; /* 增加頂部內邊距，確保不被導航遮擋 */
+    }
+    
+    .sidebar {
+        width: 300px; /* 在小螢幕上稍微減少寬度 */
+        padding: 25px; /* 保持適當內邊距 */
+        padding-top: 30px; /* 頂部間距 */
+    }
+    
+    nav ul {
+        gap: 22px; /* 小螢幕上稍微減少但仍保持舒適間距 */
+    }
+    
+    nav a {
+        padding: 14px 18px; /* 在小螢幕上保持適當內邊距 */
+        font-size: 1rem; /* 調整字體大小 */
+        line-height: 1.4; /* 調整行高 */
+    }
+    
+    nav li.divider {
+        margin: 30px 0; /* 小螢幕上適當的分隔線間距 */
+    }
+    
+    .logo {
+        margin-bottom: 40px; /* 小螢幕上Logo下方間距 */
+    }
+    
+    .logo img {
+        max-width: 150px; /* 在小螢幕上減少Logo大小 */
     }
     
     .card, .highlight-card, .cta-section {
