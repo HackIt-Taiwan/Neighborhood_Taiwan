@@ -6,6 +6,16 @@
     <title>Neighborhood Taiwan - 資訊</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/logo.png" type="image/png">
+    <meta name="theme-color" content="#ec3750">
+    <meta name="description" content="Neighborhood Taiwan - Hack Club 在舊金山的免費住宿計劃，專為18歲以下的高中生創作者而設。">
+    <script>
+        // 防止主題切換閃爍
+        (function() {
+            const theme = localStorage.getItem('theme') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
     <div class="container">
@@ -15,7 +25,7 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="https://hackclub.com/" class="main-link" target="_blank">主網站</a></li>
+                    <li><a href="https://neighborhood.hackclub.com/" class="main-link" target="_blank">主網站</a></li>
                     <li class="divider"></li>
                     <li><a href="index.html" class="active">🏡 資訊</a></li>
                     <li><a href="getting-started.html">💻 新手上路</a></li>
@@ -33,31 +43,31 @@
         <div class="content">
             <div class="header-section">
                 <h1>關於 Neighborhood</h1>
-                <p class="lead">Neighborhood 是一個在舊金山的住宿計劃，由 Hack Club 組織，這是一個 501(c)(3) 非營利組織，支持全球超過 50,000 名高中生創作者社群。</p>
+                <p class="lead">Neighborhood 是 Hack Club 在舊金山推出的住宿計劃。Hack Club 是一個 501(c)(3) 非營利組織，致力於支持全球超過 50,000 名高中生創作者社群。</p>
             </div>
 
             <div class="card">
                 <h1>什麼是 Neighborhood？</h1>
-                <p>完成 100 小時的編程，你將能夠<strong>免費在舊金山待上最多三個月</strong>！從六月到八月，你將與其他約 50 位*駭客住在不同的房子裡—住在那裡，一起工作，並與新朋友創造令人驚嘆的應用程式。</p>
-                <p>機票、食物和住宿將獲得資助。這個計劃是一個基於補助金的倡議，適合來自世界各地<strong>18 歲及以下</strong>的所有高中生。</p>
-                <p><em>*50 只是一個估計數字。Neighborhood 沒有容量限制！</em></p>
+                <p>只要完成 100 小時的程式開發，你就可以<strong>免費在舊金山住宿最多三個月</strong>！從六月到八月，你將和來自世界各地的約 50 位*程式設計愛好者一起住在不同的房子裡——在這裡生活、工作，並與新朋友一起打造令人驚艷的應用程式。</p>
+                <p>機票、食宿費用全部由我們提供。這個計劃採用補助金制度，歡迎來自世界各地<strong>18 歲及以下</strong>的所有高中生參與。</p>
+                <p><em>*50 只是預估數字，Neighborhood 沒有人數限制！</em></p>
             </div>
 
             <h1>什麼是 Hack Club？</h1>
-            <p>Hack Club 是一個 501(c)(3) 非營利組織（EIN：81-2908499），幫助高中生學習編程和建立項目。我們是最大的青少年主導的編程社群，每年有超過 50,000 名學生在 Hack Club 與朋友一起建立項目。</p>
-            <p>除了線上計劃，我們還組織面對面的黑客松和冒險活動。我們過去的一些活動包括：</p>
+            <p>Hack Club 是一個 501(c)(3) 非營利組織（EIN：81-2908499），專門幫助高中生學習程式設計和開發專案。我們是全球最大的青少年主導程式設計社群，每年有超過 50,000 名學生在 Hack Club 與朋友一起建立專案。</p>
+            <p>除了線上計劃，我們還舉辦實體黑客松和冒險活動。我們過去舉辦的一些精彩活動包括：</p>
             <div class="events-grid">
                 <div class="event-card">
                     <h3>Trail</h3>
-                    <p>在太平洋山脊步道上進行為期七天的徒步旅行，來自九個國家的 30 名青少年設計了定制的 PCB</p>
+                    <p>在太平洋山脊步道進行為期七天的徒步之旅，來自九個國家的 30 名青少年一起設計了客製化 PCB</p>
                 </div>
                 <div class="event-card">
                     <h3>Juice</h3>
-                    <p>為期 2 個月的遊戲創作活動，隨後在中國上海舉辦為期七天的遊戲展覽咖啡館</p>
+                    <p>為期兩個月的遊戲開發活動，隨後在中國上海舉辦為期七天的遊戲展示咖啡館</p>
                 </div>
                 <div class="event-card">
                     <h3>Zephyr</h3>
-                    <p>世界上最長的黑客松，在橫跨美國的跨國列車上舉行</p>
+                    <p>全球最長的黑客松，在橫跨美國的火車上舉行</p>
                 </div>
             </div>
             <p>...還有更多！</p>
@@ -65,44 +75,45 @@
 
             <div class="card highlight-card">
                 <h1>誰可以參加？</h1>
-                <p>為了符合 Neighborhood 的資格，您必須滿足以下條件：</p>
+                <p>要符合 Neighborhood 的資格，你必須滿足以下條件：</p>
                 <ul class="requirements-list">
                     <li>
                         <div class="req-icon">👤</div>
                         <div class="req-content">
-                            <strong>年齡限制</strong>：您在參與活動的整個期間必須是 18 歲或以下。如果您在 Neighborhood 期間滿 19 歲，您可以參加，但必須在滿 19 歲之前離開。
+                            <strong>年齡限制</strong>：你在參與活動的整個期間必須是 18 歲或以下。如果你在 Neighborhood 期間滿 19 歲，可以參加，但必須在滿 19 歲之前離開。
                         </div>
                     </li>
                     <li>
                         <div class="req-icon">⏱️</div>
                         <div class="req-content">
-                            <strong>時間要求</strong>：您必須在一個獨立項目上完成 100 小時的工作。這個時間通過 Neighborhood 應用程序的 Hackatime 和 Stopwatch 功能進行追蹤。Stopwatch 適用於 Hackatime 無法記錄的任務（除了編程和 Figma 之外的任何內容）。100 小時中只有 20 小時可以來自 Stopwatch，並且沒有要求必須使用 Stopwatch。
+                            <strong>時數要求</strong>：你必須在一個獨立專案上完成 100 小時的工作。這個時間透過 Neighborhood 應用程式的 Hackatime 和 Stopwatch 功能進行追蹤。Stopwatch 適用於 Hackatime 無法記錄的任務（編程和 Figma 以外的任何內容）。100 小時中只有 20 小時可以來自 Stopwatch，而且沒有強制要求必須使用 Stopwatch。
                         </div>
                     </li>
                     <li>
                         <div class="req-icon">💻</div>
                         <div class="req-content">
-                            <strong>持續創作</strong>：在舊金山停留期間，您必須繼續構建開源項目或與同行合作，每週至少 40 小時。
+                            <strong>持續開發</strong>：在舊金山停留期間，你必須繼續建構開源專案或與夥伴合作，每週至少 40 小時。
                         </div>
                     </li>
                     <li>
                         <div class="req-icon">🚀</div>
                         <div class="req-content">
-                            <strong>項目發布</strong>：您必須確保在抵達舊金山時完成您的 100 小時項目，並在 Neighborhood 期間每週發布您的項目。發布意味著部署一個公開可訪問、正常運作的項目版本。
+                            <strong>專案發布</strong>：你必須確保在抵達舊金山時完成你的 100 小時專案，並在 Neighborhood 期間每週發布你的專案。發布意味著部署一個公開可存取、正常運作的專案版本。
                         </div>
                     </li>
                 </ul>
             </div>
 
-            <h1>組織者</h1>
-            <p>Neighborhood 由 Hack Club 職員和其社群的各個成員組織。主要組織者是 Thomas Stubblefield，他曾領導過其他活動，如 Juice 和 Trail。關於其他組織者的更多信息將很快發布。</p>
+            <h1>主辦單位</h1>
+            <p>Neighborhood 由 Hack Club 職員和社群成員共同籌辦。主要籌辦人是 Thomas Stubblefield，他曾主導過其他活動，如 Juice 和 Trail。關於其他籌辦人的更多資訊將陸續公布。</p>
             
             <div class="cta-section">
                 <h2>準備好加入 Neighborhood 了嗎？</h2>
-                <p>完成 100 小時的編程，獲得免費前往舊金山的機會！</p>
+                <p>完成 100 小時的程式開發，獲得免費前往舊金山的機會！</p>
                 <a href="getting-started.html" class="btn">立即開始 →</a>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html> 

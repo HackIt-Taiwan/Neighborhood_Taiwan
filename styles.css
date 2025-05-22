@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* CSS 變數 - 淺色主題 */
 :root {
     --bg-warm: #fdf6e3;
     --bg-warm-hover: #f5edda;
@@ -18,14 +19,74 @@
     --wood-dark: #dccfad;
     --card-bg: #fff;
     --highlight-bg: #fffdf8;
+    --main-bg: #f8f8f8;
+    --content-bg: #ffffff;
+    --nav-hover-shadow: rgba(0, 0, 0, 0.15);
+    --global-link-bg: rgba(255, 255, 255, 0.6);
+    --global-link-hover-bg: rgba(255, 255, 255, 0.8);
+    --content-shadow: rgba(0, 0, 0, 0.05);
+}
+
+/* CSS 變數 - 深色主題 */
+[data-theme="dark"] {
+    --bg-warm: #2d2d2d;
+    --bg-warm-hover: #404040;
+    --bg-warm-active: #4a4a4a;
+    --border-color: #555;
+    --accent-color: #ff6b85;
+    --text-color: #b8b8b8;
+    --text-dark: #e8e8e8;
+    --divider-color: #666;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --wood-bg: #363636;
+    --wood-dark: #2a2a2a;
+    --card-bg: #3a3a3a;
+    --highlight-bg: #424242;
+    --main-bg: #1e1e1e;
+    --content-bg: #2a2a2a;
+    --nav-hover-shadow: rgba(255, 255, 255, 0.1);
+    --global-link-bg: rgba(255, 255, 255, 0.1);
+    --global-link-hover-bg: rgba(255, 255, 255, 0.2);
+    --content-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* 主題切換按鈕樣式 */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    font-size: 1.2rem;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: #f8f8f8;
-    background-image: linear-gradient(to bottom, #fff, #f8f8f8);
+    background-color: var(--main-bg);
+    background-image: linear-gradient(to bottom, var(--content-bg), var(--main-bg));
+    transition: all 0.3s ease;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -45,6 +106,49 @@ body {
     z-index: 100;
     display: flex;
     flex-direction: column;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+/* 漢堡選單按鈕 */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    width: 44px;
+    height: 44px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.mobile-menu-toggle span {
+    width: 20px;
+    height: 2px;
+    background: var(--text-dark);
+    margin: 2px 0;
+    transition: all 0.3s ease;
+    border-radius: 1px;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .logo {
@@ -58,6 +162,7 @@ body {
     height: auto;
     filter: drop-shadow(0 4px 6px var(--shadow-color));
     transition: transform 0.3s ease;
+    border-radius: 8px;
 }
 
 .logo img:hover {
@@ -86,6 +191,7 @@ nav li:hover {
 nav li.divider {
     border-bottom: 1px dashed var(--divider-color);
     margin: 25px 0;
+    height: 1px;
 }
 
 nav a {
@@ -116,6 +222,10 @@ nav a::before {
     transition: opacity 0.3s ease;
 }
 
+[data-theme="dark"] nav a::before {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);
+}
+
 nav a:hover::before {
     opacity: 1;
 }
@@ -123,21 +233,21 @@ nav a:hover::before {
 nav a:hover {
     background-color: var(--bg-warm-hover);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px var(--shadow-color);
+    box-shadow: 0 5px 15px var(--nav-hover-shadow);
 }
 
 nav a.active {
     background-color: var(--bg-warm-active);
     font-weight: bold;
     border-color: var(--divider-color);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 8px var(--nav-hover-shadow);
 }
 
 nav a.main-link {
     font-weight: bold;
     background-color: var(--bg-warm-active);
     border-color: var(--wood-dark);
-    color: #444;
+    color: var(--text-dark);
 }
 
 .global-link-container {
@@ -154,12 +264,12 @@ nav a.main-link {
     font-size: 0.95rem;
     transition: all 0.3s ease;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: var(--global-link-bg);
     border: 1px dashed var(--divider-color);
 }
 
 .global-link:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--global-link-hover-bg);
     transform: translateY(-2px);
 }
 
@@ -181,9 +291,10 @@ nav a.main-link {
     padding: 50px;
     margin-left: 280px;
     max-width: 900px;
-    background-color: white;
-    box-shadow: 0 0 30px rgba(0,0,0,0.05);
+    background-color: var(--content-bg);
+    box-shadow: 0 0 30px var(--content-shadow);
     min-height: 100vh;
+    transition: all 0.3s ease;
 }
 
 .header-section {
@@ -195,7 +306,8 @@ nav a.main-link {
 p.lead {
     font-size: 1.15rem;
     line-height: 1.9;
-    color: #444;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 h1 {
@@ -224,7 +336,8 @@ h1:after {
 h2 {
     font-size: 1.6rem;
     margin: 30px 0 20px;
-    color: #444;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
 }
 
 h3 {
@@ -284,12 +397,14 @@ a:hover:after {
 
 strong {
     font-weight: 600;
-    color: #222;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
 }
 
 em {
-    color: #555;
+    color: var(--text-color);
     font-style: italic;
+    transition: color 0.3s ease;
 }
 
 /* 步驟容器樣式 */
@@ -338,8 +453,8 @@ em {
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 3px 15px var(--shadow-color);
-    border: 1px solid #f0f0f0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .step-item:hover .step-content {
@@ -349,10 +464,11 @@ em {
 
 .step-content h3 {
     margin-top: 0;
-    color: #333;
+    color: var(--text-dark);
     border-bottom: 2px solid rgba(236, 55, 80, 0.2);
     padding-bottom: 10px;
     margin-bottom: 15px;
+    transition: color 0.3s ease;
 }
 
 .step-content p {
@@ -365,8 +481,9 @@ em {
     border-radius: 15px;
     padding: 30px;
     margin: 35px 0;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    border: 1px solid #f0f0f0;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card h1 {
@@ -471,13 +588,14 @@ em {
 
 /* 目錄樣式 */
 ul.toc {
-    background-color: #fafafa;
+    background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 15px;
     padding: 25px 35px;
     margin-bottom: 35px;
     list-style-type: none;
     box-shadow: 0 3px 12px var(--shadow-color);
+    transition: background-color 0.3s ease;
 }
 
 ul.toc li {
@@ -561,79 +679,146 @@ ol li::marker {
 }
 
 @media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .theme-toggle {
+        top: 15px;
+        right: 70px;
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+    }
+    
     .container {
         flex-direction: column;
     }
     
     .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        height: 100vh;
+        transition: left 0.3s ease;
+        z-index: 999;
+        box-shadow: 3px 0 20px var(--shadow-color);
+        padding: 20px;
+    }
+    
+    .sidebar.open {
+        left: 0;
+    }
+    
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: auto;
-        position: relative;
-        padding: 15px;
-        box-shadow: 0 2px 10px var(--shadow-color);
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
     
     .content {
         margin-left: 0;
-        padding: 30px 20px;
+        padding: 80px 20px 30px;
+        width: 100%;
     }
     
     nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
     }
     
     nav li {
-        margin: 5px;
+        margin: 0;
+        transform: none;
+    }
+    
+    nav li:hover {
+        transform: translateX(5px);
     }
     
     nav li.divider {
-        display: none;
+        margin: 20px 0;
+        height: 1px;
     }
     
     nav a {
-        padding: 10px 15px;
-        font-size: 0.9rem;
+        padding: 12px 16px;
+        font-size: 1rem;
     }
     
     .logo {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
     
     .logo img {
-        max-width: 140px;
+        max-width: 160px;
     }
     
     .events-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     .requirements-list li {
         flex-direction: column;
+        text-align: center;
+        gap: 15px;
     }
     
     .req-icon {
-        margin-bottom: 10px;
+        margin: 0 auto;
+        align-self: center;
     }
     
     .steps-container::before {
-        left: 15px;
+        display: none;
+    }
+    
+    .step-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
     }
     
     .step-number {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
-        margin-right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin-right: 0;
+        margin-bottom: 0;
     }
     
     .step-content {
-        padding: 15px;
+        padding: 20px;
+        margin-left: 0;
+        max-width: 100%;
     }
     
     .global-link-container {
-        margin-top: 15px;
+        margin-top: 20px;
+        padding-top: 15px;
+    }
+    
+    .header-section h1 {
+        font-size: 1.6rem;
+    }
+    
+    .header-section p.lead {
+        font-size: 1.05rem;
     }
 }
 

@@ -6,6 +6,16 @@
     <title>Neighborhood Taiwan - 給家長</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/logo.png" type="image/png">
+    <meta name="theme-color" content="#ec3750">
+    <meta name="description" content="給家長的 Neighborhood Taiwan 指南 - 關於 Hack Club 舊金山住宿計劃的詳細資訊、安全措施和費用說明。">
+    <script>
+        // 防止主題切換閃爍
+        (function() {
+            const theme = localStorage.getItem('theme') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
     <div class="container">
@@ -15,7 +25,7 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="https://hackclub.com/" class="main-link" target="_blank">主網站</a></li>
+                    <li><a href="https://neighborhood.hackclub.com/" class="main-link" target="_blank">主網站</a></li>
                     <li class="divider"></li>
                     <li><a href="index.html">🏡 資訊</a></li>
                     <li><a href="getting-started.html">💻 新手上路</a></li>
@@ -34,53 +44,54 @@
             <h1>家長指南與常見問題</h1>
 
             <h1>什麼是 Hack Club？</h1>
-            <p>Hack Club 是一個 501(c)(3) 非營利組織，其使命是培養一代健康的程式編寫者、創客、創辦人和建設者。Hack Club 是一個由數百個學生主導的計算機科學俱樂部網絡，以及一個來自世界各地超過 50,000 名高中生組成的安全、積極的在線社區。Hack Club 計劃對所有學生免費且可訪問。我們支持青少年在現實世界中創建真實項目。Hack Club 得到了科技行業著名人物的支持，包括 GitHub 創始人 Tom Preston-Werner、Dell 創始人 Michael Dell 以及 Apple、Facebook、Microsoft 和 GitHub 的高管，以及許多新興科技初創公司。</p>
-            <p>除了線上計劃，我們還組織面對面的黑客松和冒險活動。我們過去的一些活動包括：</p>
+            <p>Hack Club 是一個 501(c)(3) 非營利組織，致力於培養新一代健康的程式設計師、創客、創業家和建設者。Hack Club 是一個由數百個學生主導的計算機科學社團網絡，以及一個來自世界各地超過 50,000 名高中生組成的安全、正向的線上社群。Hack Club 的所有計劃對所有學生免費開放。我們支持青少年在現實世界中創建真實的專案。Hack Club 得到了科技業知名人士的支持，包括 GitHub 創辦人 Tom Preston-Werner、Dell 創辦人 Michael Dell，以及 Apple、Facebook、Microsoft 和 GitHub 的高階主管，還有許多新興科技新創公司。</p>
+            <p>除了線上計劃，我們還舉辦實體黑客松和冒險活動。我們過去舉辦的一些精彩活動包括：</p>
             <ul>
-                <li><strong>Trail</strong>：在太平洋山脊步道上進行為期七天的徒步旅行，來自九個國家的 30 名青少年設計了定制的 PCB</li>
-                <li><strong>Juice</strong>：為期 2 個月的遊戲創作活動，隨後在中國上海舉辦為期七天的遊戲展覽咖啡館</li>
-                <li><strong>Zephyr</strong>：世界上最長的黑客松，在橫跨美國的跨國列車上舉行</li>
+                <li><strong>Trail</strong>：在太平洋山脊步道進行為期七天的徒步之旅，來自九個國家的 30 名青少年一起設計了客製化 PCB</li>
+                <li><strong>Juice</strong>：為期兩個月的遊戲開發活動，隨後在中國上海舉辦為期七天的遊戲展示咖啡館</li>
+                <li><strong>Zephyr</strong>：全球最長的黑客松，在橫跨美國的火車上舉行</li>
             </ul>
             <p>...還有更多！</p>
-            <p>要了解更多關於 Hack Club 的信息，請訪問<a href="https://hackclub.com/" target="_blank">主網站</a>、<a href="https://hackclub.com/team/" target="_blank">Hack Club 團隊</a>和<a href="https://hackclub.com/philosophy/" target="_blank">Hack Club 理念</a>。</p>
+            <p>要了解更多關於 Hack Club 的資訊，請造訪<a href="https://hackclub.com/" target="_blank">官方網站</a>、<a href="https://hackclub.com/team/" target="_blank">Hack Club 團隊</a>和<a href="https://hackclub.com/philosophy/" target="_blank">Hack Club 理念</a>。</p>
 
             <h1>什麼是 Neighborhood？</h1>
-            <p>Neighborhood 是一個為期 3 個月的住宿計劃，由 Hack Clubbers 為 Hack Clubbers 組織。參與者將被邀請留在舊金山 Neighborhood，只要他們每週至少花 40 小時創建一個出色的應用程序，最少 2 週，最多 3 個月。</p>
-            <p>機票、食物和住宿將獲得資助。這個計劃是一個基於補助金的倡議，適合來自世界各地<strong>18 歲及以下</strong>的所有高中生。</p>
-            <p>Neighborhood 是一個<strong>無人監督的計劃</strong>。除了住在提供的住宿外，學生可以自由探索城市並決定自己的日常行程。我們將每週見面一次，發布和發行我們的項目。</p>
+            <p>Neighborhood 是一個為期 3 個月的住宿計劃，由 Hack Clubbers 為 Hack Clubbers 籌辦。參與者將受邀留在舊金山的 Neighborhood，只要他們每週至少花 40 小時創建出色的應用程式，停留期間最短 2 週，最長 3 個月。</p>
+            <p>機票、食宿費用將獲得補助。這個計劃採用補助金制度，歡迎來自世界各地<strong>18 歲及以下</strong>的所有高中生參與。</p>
+            <p>Neighborhood 是一個<strong>無人監督的計劃</strong>。除了住在提供的住宿外，學生可以自由探索城市並決定自己的日常行程。我們每週會面一次，發布和展示我們的專案。</p>
 
             <h1>誰可以參加？</h1>
-            <p>為了使您的孩子符合 Neighborhood 的資格，必須滿足以下條件：</p>
+            <p>為了讓您的孩子符合 Neighborhood 的資格，必須滿足以下條件：</p>
             <ul>
                 <li>您的孩子在參與活動的整個期間必須是 18 歲或以下。如果您的孩子在 Neighborhood 期間滿 19 歲，他們可以參加，但必須在滿 19 歲之前離開。</li>
-                <li>您的孩子必須在一個獨立項目上完成 100 小時的工作。這個時間通過 Neighborhood 應用程序的 Hackatime 和 Stopwatch 功能進行追蹤。Stopwatch 適用於 Hackatime 無法記錄的任務（除了編程和 Figma 之外的任何內容）。100 小時中只有 20 小時可以來自 Stopwatch，並且沒有要求必須使用 Stopwatch。</li>
-                <li>在舊金山停留期間，您的孩子必須繼續構建開源項目或與同行合作，每週至少 40 小時。</li>
-                <li>參與者必須確保在抵達舊金山時完成他們的 100 小時項目，並在 Neighborhood 期間每週發布他們的項目。發布意味著部署一個公開可訪問、正常運作的項目版本。</li>
+                <li>您的孩子必須在一個獨立專案上完成 100 小時的工作。這個時間透過 Neighborhood 應用程式的 Hackatime 和 Stopwatch 功能進行追蹤。Stopwatch 適用於 Hackatime 無法記錄的任務（編程和 Figma 以外的任何內容）。100 小時中只有 20 小時可以來自 Stopwatch，而且沒有強制要求必須使用 Stopwatch。</li>
+                <li>在舊金山停留期間，您的孩子必須繼續建構開源專案或與同儕合作，每週至少 40 小時。</li>
+                <li>參與者必須確保在抵達舊金山時完成他們的 100 小時專案，並在 Neighborhood 期間每週發布他們的專案。發布意味著部署一個公開可存取、正常運作的專案版本。</li>
             </ul>
 
             <h1>相關費用</h1>
-            <p>參與是<strong>完全免費的</strong>，但您的孩子必須滿足入學要求。沒有完成 100 小時的編程，您的孩子將無法獲得機票補助。</p>
-            <p>旅行補助為<strong>美國/加拿大學生 500 美元，國際學生 750 美元</strong>。您的孩子必須完成上述要求才有資格獲得補助。它涵蓋從您國家出發的最低成本合理航班。</p>
-            <p>如果從您國家出發的最低成本合理航班超過給予的補助金額，學生可以通過在 100 小時之外繼續工作來增加補助金額。<strong>每多花一個小時，他們將獲得 5 美元的額外補助。</strong>超出部分的費用將由學生自行承擔。</p>
+            <p>參與是<strong>完全免費的</strong>，但您的孩子必須滿足入學要求。沒有完成 100 小時的程式設計，您的孩子將無法獲得機票補助。</p>
+            <p>旅行補助為<strong>美國/加拿大學生 500 美元，國際學生 750 美元</strong>。您的孩子必須完成上述要求才有資格獲得補助。它補助從您國家出發的最低成本合理航班。</p>
+            <p>如果從您國家出發的最低成本合理航班超過給予的補助金額，學生可以透過在 100 小時之外繼續工作來增加補助金額。<strong>每多花一個小時，他們將獲得 5 美元的額外補助。</strong>超出部分的費用將由學生自行承擔。</p>
             <p>Hack Club <strong>不會支付簽證或護照費用</strong>。然而，如果在機票預訂後補助金有剩餘，您可以將其用於簽證或護照費用。</p>
-            <p>計劃、旅行補助和住宿僅供您的孩子使用 — 它們不包括父母的費用。如果父母和監護人希望與孩子一同前往，必須自行承擔所有費用並找到單獨的住所。</p>
-            <p>在舊金山內的交通方面，有 Muni：舊金山的巴士和地鐵網絡。Muni 對 18 歲以下的人免費，非常適合您的孩子在舊金山周圍旅行使用。您的孩子可能會使用 Muni 從機場前往 Neighborhood 的住所。</p>
-            <p>您的孩子將能夠在 Neighborhood 應用中選擇特定的入住和退房日期。</p>
+            <p>計劃、旅行補助和住宿僅供您的孩子使用——它們不包括家長的費用。如果家長和監護人希望與孩子一同前往，必須自行承擔所有費用並尋找獨立的住所。</p>
+            <p>在舊金山內的交通方面，有 Muni：舊金山的公車和地鐵網絡。Muni 對 18 歲以下的人免費，非常適合您的孩子在舊金山周圍移動使用。您的孩子可能會使用 Muni 從機場前往 Neighborhood 的住所。</p>
+            <p>您的孩子將能夠在 Neighborhood 應用程式中選擇特定的入住和退房日期。</p>
 
-            <h1>簽證信息</h1>
-            <p>如果您的孩子從國際上前往參加 Neighborhood，他們將需要根據其公民身份獲得 ESTA 或簽證。<strong>滿足入境美國的要求是參與者的責任</strong>，我們鼓勵您自行研究。</p>
-            <p>如果您需要申請簽證並需要邀請函，請填寫此表格。參與者<strong>僅在 Neighborhood 應用上記錄超過 50 小時後</strong>才有資格獲得邀請函。</p>
+            <h1>簽證資訊</h1>
+            <p>如果您的孩子從國外前來參加 Neighborhood，他們將需要根據其公民身分申請 ESTA 或簽證。<strong>滿足入境美國的要求是參與者的責任</strong>，我們鼓勵您自行研究。</p>
+            <p>如果您需要申請簽證並需要邀請函，請填寫此表格。參與者<strong>僅在 Neighborhood 應用程式上記錄超過 50 小時後</strong>才有資格獲得邀請函。</p>
 
-            <h1>安全與關注</h1>
-            <p>我們理解，讓您的孩子在夏季前往 Neighborhood 可能會引起一些重要的安全擔憂和焦慮。Hack Club 致力於為活動參與者創造一個安全舒適的環境。與之前的 Hack Club 活動一樣，所有在場的成年人都經過了嚴格的背景調查（州級和聯邦級）。我們致力於建立一個性別平衡的社區，並為所有青少年提供安全的空間。在活動期間，<strong>免費工作人員幫助熱線 (+1 855-625-HACK)</strong> 將全天候提供，如果您有任何問題。</p>
-            <p>您的孩子在此活動期間將擁有其設備（例如，手機、筆記本電腦），以便您可以直接與他們聯繫。如果您在國際上，請考慮購買預付 (e)SIM 卡用於國際通話。這樣您的孩子可以在沒有 WiFi 的情況下連接到互聯網。如果出於任何原因，您無法通過電話或短信直接聯繫您的孩子，您可以聯繫 Hack Club 工作人員成員以幫助與您的孩子溝通。</p>
+            <h1>安全與關切</h1>
+            <p>我們了解，讓您的孩子在夏季前往 Neighborhood 可能會引起一些重要的安全擔憂和焦慮。Hack Club 致力於為活動參與者創造一個安全舒適的環境。與之前的 Hack Club 活動一樣，所有在場的成年人都經過了嚴格的背景調查（州級和聯邦級）。我們致力於建立一個性別平衡的社群，並為所有青少年提供安全的空間。在活動期間，<strong>免費工作人員協助熱線 (+1 855-625-HACK)</strong> 將全天候提供，如果您有任何問題。</p>
+            <p>您的孩子在此活動期間將擁有其設備（例如，手機、筆記型電腦），以便您可以直接與他們聯繫。如果您在國外，請考慮購買預付 (e)SIM 卡用於國際通話。這樣您的孩子可以在沒有 WiFi 的情況下連接到網路。如果出於任何原因，您無法透過電話或簡訊直接聯繫您的孩子，您可以聯繫 Hack Club 工作人員成員以協助與您的孩子溝通。</p>
 
             <h1>住宿安排</h1>
-            <p>關於住宿和地點的更多詳細信息將在我們獲得完整信息後盡快分享。參與者將一起住在房子裡，與其他 Hack Clubbers 共享房間。選定的房屋都位於安全、經過審查的區域。</p>
+            <p>關於住宿和地點的更多詳細資訊將在我們獲得完整資訊後儘快分享。參與者將一起住在房子裡，與其他 Hack Clubbers 共享房間。選定的房屋都位於安全、經過審查的區域。</p>
 
-            <h1>更多信息...</h1>
-            <p>更多信息可以在<a href="faq.html">常見問題</a>頁面找到。如果您有進一步的疑問，您也可以聯繫 thomas@hackclub.com 進行諮詢。</p>
+            <h1>更多資訊...</h1>
+            <p>更多資訊可以在<a href="faq.html">常見問題</a>頁面找到。如果您有進一步的疑問，您也可以聯繫 thomas@hackclub.com 進行諮詢。</p>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html> 

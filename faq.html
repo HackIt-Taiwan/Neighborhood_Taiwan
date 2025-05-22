@@ -6,6 +6,16 @@
     <title>Neighborhood Taiwan - 常見問題</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/logo.png" type="image/png">
+    <meta name="theme-color" content="#ec3750">
+    <meta name="description" content="Neighborhood Taiwan 常見問題 - 關於專案要求、時間限制、簽證申請等常見問題的詳細解答。">
+    <script>
+        // 防止主題切換閃爍
+        (function() {
+            const theme = localStorage.getItem('theme') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
     <div class="container">
@@ -15,7 +25,7 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="https://hackclub.com/" class="main-link" target="_blank">主網站</a></li>
+                    <li><a href="https://neighborhood.hackclub.com/" class="main-link" target="_blank">主網站</a></li>
                     <li class="divider"></li>
                     <li><a href="index.html">🏡 資訊</a></li>
                     <li><a href="getting-started.html">💻 新手上路</a></li>
@@ -32,58 +42,59 @@
         </div>
         <div class="content">
             <h1>常見問題</h1>
-            <p>本常見問題按照部分排序。您可以在此快速跳轉至不同部分：</p>
+            <p>本常見問題頁面依主題分類整理。你可以快速跳轉至不同主題：</p>
             <ul class="toc">
                 <li><a href="#qualifying-projects">哪些專案符合條件？</a></li>
-                <li><a href="#working-on-projects">專案工作與開發日誌</a></li>
-                <li><a href="#hours-stipends">時間與補助</a></li>
+                <li><a href="#working-on-projects">專案開發與開發日誌</a></li>
+                <li><a href="#hours-stipends">時數與補助</a></li>
                 <li><a href="#flights-cost">機票、費用與停留時間</a></li>
-                <li><a href="#in-person-stay">現場住宿</a></li>
-                <li><a href="#visa-passport">簽證、護照與抵達</a></li>
+                <li><a href="#in-person-stay">實體住宿</a></li>
+                <li><a href="#visa-passport">簽證、護照與入境</a></li>
                 <li><a href="#more-questions">更多問題？</a></li>
             </ul>
 
             <h1 id="qualifying-projects">哪些專案符合條件？</h1>
-            <p>Neighborhood 沒有容量限制。如果您花費 100 小時，您就可以參加！</p>
-            <p><strong>我必須在 100 小時內一直在同一個專案上工作嗎？我可以製作幾個不同的專案嗎？</strong> 您必須在來之前的 100 小時內只在一個專案上工作 — 但當您搬到舊金山時，您不需要繼續同一個專案（儘管歡迎您這樣做）。</p>
-            <p><strong>我可以在團隊中工作嗎？</strong> 歡迎您在團隊中工作！每個人必須達到 100 小時才能去舊金山。如果您達到 100 小時，但您的團隊其他成員沒有，您仍然可以去舊金山。</p>
-            <p><strong>我們可以創建私有存儲庫嗎？</strong> 不可以，所有專案必須是開源的。</p>
-            <p><strong>我們可以為我們的專案收費嗎？我們可以出售它嗎？</strong> 您的專案必須在 Neighborhood 期間對 Hack Clubbers 免費訪問，並且還必須是開源的。除此之外，您可以自由出售它或為它收費！</p>
-            <p><strong>我們可以繼續在現有專案上工作，只要我們在其上再花費 100 小時嗎？</strong> 不可以，它必須是一個新的專案。</p>
-            <p><strong>我可以同時為 Neighborhood 和 Shipwrecked（或其他活動）工作在一個專案上嗎？</strong> 不可以，它們必須專門為 Neighborhood 準備。您不能重複計算您的時間。然而，如果您總共完成所有活動所需的時間總和（例如，Neighborhood + Shipwrecked 共 160 小時），歡迎您參加兩個活動。</p>
-            <p><strong>如果邏輯上有意義，一個專案可以跨多個 GitHub 存儲庫嗎？</strong> 可以！</p>
-            <p><strong>如果我們在計算機科學課上有一個熱情項目作業，我們可以把它作為我們的應用程序嗎？</strong> 可以，只要您對您的專案真正充滿熱情！</p>
-            <p><strong>如果它是為其他開發者而不是一個應用程序的工具，算嗎？CLI 工具/TUI 呢？</strong> 是的，只要它也可以在代碼編輯器之外使用！</p>
+            <p>Neighborhood 沒有人數限制。只要你花費 100 小時，就可以參加！</p>
+            <p><strong>我必須在 100 小時內一直開發同一個專案嗎？我可以做幾個不同的專案嗎？</strong> 你必須在來到舊金山之前的 100 小時內專注於一個專案——但當你搬到舊金山時，不需要繼續同一個專案（當然你也可以繼續）。</p>
+            <p><strong>我可以團隊合作嗎？</strong> 當然可以！每個人都必須達到 100 小時才能來舊金山。如果你達到了 100 小時，但團隊其他成員沒有，你仍然可以參加。</p>
+            <p><strong>我們可以建立私有程式庫嗎？</strong> 不可以，所有專案都必須是開源的。</p>
+            <p><strong>我們可以為專案收費嗎？我們可以販售它嗎？</strong> 你的專案在 Neighborhood 期間必須對 Hack Clubbers 免費開放，而且必須是開源的。除此之外，你可以自由販售或收費！</p>
+            <p><strong>我們可以繼續開發現有專案，只要再花費 100 小時嗎？</strong> 不可以，必須是全新的專案。</p>
+            <p><strong>我可以同時為 Neighborhood 和 Shipwrecked（或其他活動）開發同一個專案嗎？</strong> 不可以，專案必須專門為 Neighborhood 而開發。你不能重複計算時間。不過，如果你完成所有活動所需的總時數（例如，Neighborhood + Shipwrecked 共 160 小時），歡迎你參加兩個活動。</p>
+            <p><strong>如果在邏輯上合理，一個專案可以跨多個 GitHub 程式庫嗎？</strong> 可以！</p>
+            <p><strong>如果我們在計算機科學課上有一個充滿熱情的專案作業，我們可以把它作為申請專案嗎？</strong> 可以，只要你對專案真正充滿熱情！</p>
+            <p><strong>如果它是為其他開發者而不是一般用戶設計的工具，算數嗎？CLI 工具/TUI 呢？</strong> 可以，只要它也可以在程式編輯器之外使用！</p>
 
-            <h1 id="working-on-projects">專案工作與開發日誌</h1>
-            <p><strong>如果我正在專案上工作，但它沒有被 Hackatime 追蹤怎麼辦 — 例如繪畫、製作音樂？</strong> 有 Hackatime 和 Stopwatch。Stopwatch 僅限有限使用（在 100 小時中最多 20 小時）。在 Hackatime 不適合的情況下，如在 Figma 等工具中為專案進行一些設計工作，將使用 Stopwatch。只有積極編碼或進行設計工作的時間才會計入您的總時間；研究時間（例如觀看視頻，閱讀）不計入您的總時間。</p>
-            <p><strong>如果我們想繼續在 100 小時專案上工作，我們必須在飛往舊金山之前完成它嗎？</strong> 您不必完全完成您的專案，但必須有一個公開可用和可用的版本 — 例如，一個每個人都可以訪問使用的網站。</p>
-            <p><strong>開發日誌是必要的嗎？它們應該多頻繁/多長？</strong> 開發日誌是強制性的！我們建議每工作 3-4 小時記錄一次您的專案進展，但您可以根據您的進展情況進行調整。在開發日誌中，告訴我們您做了什麼 — 我們需要這個來驗證您花費的時間 :) 如果您能在開發日誌中展示自己並打招呼，那就太棒了！如果您感到不舒服，如果您願意，可以使用像 vtuber 模型這樣的東西。</p>
+            <h1 id="working-on-projects">專案開發與開發日誌</h1>
+            <p><strong>如果我正在開發專案，但 Hackatime 無法追蹤怎麼辦——例如繪圖、製作音樂？</strong> 有 Hackatime 和 Stopwatch 兩種方式。Stopwatch 僅限有限使用（100 小時中最多 20 小時）。在 Hackatime 不適用的情況下，例如在 Figma 等工具中為專案進行設計工作，會使用 Stopwatch。只有積極編程或進行設計工作的時間才計入總時數；研究時間（例如觀看影片、閱讀）不計入總時數。</p>
+            <p><strong>如果我們想繼續開發 100 小時專案，我們必須在前往舊金山之前完成它嗎？</strong> 你不必完全完成專案，但必須有一個公開可用的版本——例如，一個每個人都可以存取使用的網站。</p>
+            <p><strong>開發日誌是必要的嗎？它們應該多頻繁/多長？</strong> 開發日誌是必須的！我們建議每工作 3-4 小時記錄一次專案進展，但你可以根據進度情況進行調整。在開發日誌中，告訴我們你做了什麼——我們需要這個來驗證你花費的時間 :) 如果你能在開發日誌中露面並打招呼，那就太棒了！如果你感到不自在，也可以使用像 vtuber 模型這樣的方式。</p>
 
-            <h1 id="hours-stipends">時間與補助</h1>
-            <p><strong>每週 40 小時的要求是嚴格的嗎？如果我們有其他遠程活動/學習要做，錯過時間標記可以嗎？</strong> 是的，這是一個嚴格的要求，但您也可以在週末工作。這也不是固定的時間，如每天上午 9 點至下午 5 點。您只需要每週至少在您的個人專案上編碼 40 小時。</p>
+            <h1 id="hours-stipends">時數與補助</h1>
+            <p><strong>每週 40 小時的要求是嚴格的嗎？如果我們有其他遠端活動/學習要做，錯過時間目標可以嗎？</strong> 是的，這是嚴格的要求，但你也可以在週末工作。這也不是固定時間，例如每天上午 9 點至下午 5 點。你只需要每週至少在個人專案上編程 40 小時。</p>
             <p><strong>如果我不需要機票補助，我可以少做一些時間嗎？</strong> 不可以，無論是否需要機票補助，都需要 100 小時才能參加。</p>
-            <p><strong>100 小時必須在五月底前完成，還是可以在我們離開前完成？</strong> 100 小時是在您抵達舊金山之前，所以對於 6 月初開始的人，他們需要在 5 月底前完成 100 小時。如果您稍後到達，在您計劃搬入的時間前完成 100 小時。</p>
+            <p><strong>100 小時必須在五月底前完成，還是可以在我們出發前完成？</strong> 100 小時是在你抵達舊金山之前，所以對於 6 月初開始的人，需要在 5 月底前完成 100 小時。如果你稍後到達，請在計劃入住時間前完成 100 小時。</p>
 
             <h1 id="flights-cost">機票、費用與停留時間</h1>
-            <p><strong>全部機票費用都會被覆蓋嗎？</strong> 旅行補助金額為美國/加拿大學生 500 美元，國際學生 750 美元。它旨在至少覆蓋往返機票成本的 50%。您需要在您的專案上完成 100 小時的工作並發布它才有資格。它最多覆蓋從您國家出發的最低成本合理航班。</p>
-            <p><strong>生活費補助的美元價值是多少，保險/交通是否會被覆蓋？</strong> 參加 Neighborhood 包括與 Hack Clubber 室友同住、食物（雜貨 - 您需要自己烹飪）、城市內交通和機票補助。（舊金山的 18 歲及以下乘客可免費乘坐公共交通（巴士和火車）。）</p>
-            <p><strong>我可以在夏天期間來回兩次嗎？</strong> 旅行補助僅適用於 1 次往返舊金山的旅程。您可以自費來回，但您需要維持每週 40 小時的編碼。</p>
+            <p><strong>全部機票費用都會被補助嗎？</strong> 旅行補助金額為美國/加拿大學生 500 美元，國際學生 750 美元。它旨在至少補助往返機票成本的 50%。你需要在專案上完成 100 小時的工作並發布它才有資格。它最多補助從你國家出發的最低成本合理航班。</p>
+            <p><strong>生活補助的美元價值是多少，保險/交通是否會被補助？</strong> 參加 Neighborhood 包括與 Hack Clubber 室友同住、食物（雜貨——你需要自己烹飪）、市內交通和機票補助。（舊金山的 18 歲及以下乘客可免費搭乘大眾運輸（公車和電車）。）</p>
+            <p><strong>我可以在夏天期間來回兩次嗎？</strong> 旅行補助僅適用於 1 次往返舊金山的旅程。你可以自費來回，但需要維持每週 40 小時的編程。</p>
 
-            <h1 id="in-person-stay">現場住宿</h1>
-            <p><strong>會有總部的人和我們住在一起嗎？</strong> 不會 - 他們將有自己獨立的住所。</p>
-            <p><strong>我們自己煮食嗎？</strong> 是的，您有每週雜貨 - 超出部分由您自己支付！</p>
-            <p><strong>我可以選擇我的室友嗎？</strong> 可以，但他們必須是同性別的。</p>
-            <p><strong>會有宵禁嗎？</strong> 不會，這是一個無人監督的計劃 — 您每天決定自己做什麼 :)</p>
+            <h1 id="in-person-stay">實體住宿</h1>
+            <p><strong>會有總部的人和我們住在一起嗎？</strong> 不會——他們會有自己獨立的住所。</p>
+            <p><strong>我們自己煮飯嗎？</strong> 是的，你有每週雜貨預算——超出部分由你自己支付！</p>
+            <p><strong>我可以選擇室友嗎？</strong> 可以，但必須是同性別的。</p>
+            <p><strong>會有宵禁嗎？</strong> 不會，這是一個無人監督的計劃——你每天決定自己做什麼 :)</p>
 
-            <h1 id="visa-passport">簽證、護照與抵達</h1>
-            <p><strong>我需要簽證嗎？如何獲得？</strong> 您負責獲取自己的簽證。自行研究您的護照是否需要簽證 — 您可能需要 ESTA 而不是簽證！<strong>一旦您完成 50 小時的編碼/專案工作，您將有資格獲得一封官方邀請函</strong>，以支持您的簽證申請。達到這個里程碑顯著增加了您的簽證獲批機會，並有助於加快申請流程。</p>
-            <p><strong>我們獲得什麼樣的簽證？</strong> 不幸的是，這個計劃不適合教育簽證，如 J1 等。您需要獲得 B1/B2 簽證。</p>
-            <p><strong>簽證費用會得到報銷嗎？</strong> 如果簽證費用在參與者分配的補助金額內，計劃可能會報銷。然而，獲取簽證仍然是參與者自己的責任。</p>
+            <h1 id="visa-passport">簽證、護照與入境</h1>
+            <p><strong>我需要簽證嗎？如何取得？</strong> 你負責取得自己的簽證。請自行研究你的護照是否需要簽證——你可能需要 ESTA 而不是簽證！<strong>一旦你完成 50 小時的編程/專案工作，你將有資格獲得一封官方邀請函</strong>，以支持你的簽證申請。達到這個里程碑將顯著增加你的簽證獲批機會，並有助於加快申請流程。</p>
+            <p><strong>我們申請什麼樣的簽證？</strong> 很遺憾，這個計劃不適用於教育簽證，如 J1 等。你需要申請 B1/B2 簽證。</p>
+            <p><strong>簽證費用會得到補助嗎？</strong> 如果簽證費用在參與者分配的補助金額內，計劃可能會補助。然而，取得簽證仍然是參與者自己的責任。</p>
 
             <h1 id="more-questions">更多問題？</h1>
-            <p>如果您有任何問題，請加入 Hack Club Slack 上的 #neighborhood 頻道！</p>
+            <p>如果你有任何問題，請加入 Hack Club Slack 上的 #neighborhood 頻道！</p>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html> 

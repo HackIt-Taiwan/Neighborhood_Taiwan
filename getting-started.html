@@ -6,6 +6,16 @@
     <title>Neighborhood Taiwan - 新手上路</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/logo.png" type="image/png">
+    <meta name="theme-color" content="#ec3750">
+    <meta name="description" content="開始你的 Neighborhood 之旅 - 詳細的步驟指南教你如何參與 Hack Club 的舊金山住宿計劃。">
+    <script>
+        // 防止主題切換閃爍
+        (function() {
+            const theme = localStorage.getItem('theme') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
     <div class="container">
@@ -15,7 +25,7 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="https://hackclub.com/" class="main-link" target="_blank">主網站</a></li>
+                    <li><a href="https://neighborhood.hackclub.com/" class="main-link" target="_blank">主網站</a></li>
                     <li class="divider"></li>
                     <li><a href="index.html">🏡 資訊</a></li>
                     <li><a href="getting-started.html" class="active">💻 新手上路</a></li>
@@ -33,7 +43,7 @@
         <div class="content">
             <div class="header-section">
                 <h1>新手上路</h1>
-                <p class="lead">準備開始您的 Neighborhood 之旅了嗎？以下是參與 Neighborhood 計劃的步驟指南。按照這些步驟操作，很快您就可以前往舊金山與其他創作者一起創新！</p>
+                <p class="lead">準備開始你的 Neighborhood 之旅了嗎？以下是參與 Neighborhood 計劃的完整步驟指南。按照這些步驟，你很快就能前往舊金山與其他創作者一起進行創新開發！</p>
             </div>
             
             <div class="steps-container">
@@ -41,7 +51,7 @@
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>加入 Slack 社群</h3>
-                        <p>加入我們的 Slack（透過主頁註冊）並按照 #slack-welcome-start 頻道中的流程操作。這是您開始的第一步，也是與我們社群連接的主要方式。</p>
+                        <p>透過官網註冊加入我們的 Slack 社群，並按照 #slack-welcome-start 頻道中的流程操作。這是你開始的第一步，也是與我們社群連結的主要方式。</p>
                     </div>
                 </div>
                 
@@ -49,15 +59,15 @@
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3>設置 Hackatime</h3>
-                        <p>使用 Slack 登入 Hackatime。按照教學設置並開始在您使用的程式編輯器中記錄時間。這將幫助您追蹤您的項目工作時間。</p>
+                        <p>使用 Slack 帳號登入 Hackatime，按照教學進行設置，並開始在你使用的程式編輯器中記錄時間。這將幫助你追蹤專案的工作時數。</p>
                     </div>
                 </div>
                 
                 <div class="step-item">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>連接您的專案</h3>
-                        <p>一旦您設置好 Hackatime，前往 <a href="#" target="_blank">Neighborhood 應用下載</a>或<a href="#" target="_blank">Neighborhood 應用線上版</a>並連結您的專案。請記得使用與 Slack 相同的電子郵件！</p>
+                        <h3>連結你的專案</h3>
+                        <p>設置好 Hackatime 之後，前往 <a href="#" target="_blank">Neighborhood 應用程式下載</a>或<a href="#" target="_blank">Neighborhood 線上版</a>並連結你的專案。請記得使用與 Slack 相同的電子郵件！</p>
                     </div>
                 </div>
                 
@@ -65,15 +75,15 @@
                     <div class="step-number">4</div>
                     <div class="step-content">
                         <h3>了解專案指南</h3>
-                        <p>閱讀 Thomas 寫的<a href="#" target="_blank">這封信</a>，了解您應該製作的專案類型。做一些有趣的、您喜愛的東西！我們鼓勵創意和激情。</p>
+                        <p>閱讀 Thomas 寫的<a href="#" target="_blank">這封信</a>，了解你應該開發的專案類型。做一些有趣的、你熱愛的東西！我們鼓勵創意和熱情。</p>
                     </div>
                 </div>
                 
                 <div class="step-item">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3>記錄您的進度</h3>
-                        <p>經常提交您的代碼。每隔幾個小時（建議 3-4 小時）創建一個開發日誌，並附上展示您成就的螢幕錄製。同時包含一個簡短的視頻解釋，並向大家問好！</p>
+                        <h3>記錄你的進度</h3>
+                        <p>定期提交你的程式碼。每隔幾個小時（建議 3-4 小時）撰寫一份開發日誌，並附上展示你成果的螢幕錄影。同時錄製一段簡短的說明影片，向大家打招呼！</p>
                     </div>
                 </div>
                 
@@ -81,7 +91,7 @@
                     <div class="step-number">6</div>
                     <div class="step-content">
                         <h3>申請簽證邀請函</h3>
-                        <p>當您達到 50 小時時，請申請簽證邀請函！這將幫助您處理前往美國的必要文件。</p>
+                        <p>當你達到 50 小時時，可以申請簽證邀請函！這將幫助你辦理前往美國的必要文件。</p>
                     </div>
                 </div>
                 
@@ -89,22 +99,23 @@
                     <div class="step-number">7</div>
                     <div class="step-content">
                         <h3>獲得機票補助</h3>
-                        <p>當您達到 100 小時時，您將獲得機票補助！您可以開始考慮您的抵達和離開日期 — 實體 Neighborhood 從 6 月到 8 月整個時間都在進行。（最短停留時間：2 週，最長停留時間：3 個月。機票、食物和住宿全部覆蓋！）</p>
+                        <p>當你達到 100 小時時，就能獲得機票補助！你可以開始規劃抵達和離開的日期——實體 Neighborhood 從 6 月到 8 月全程開放。（最短停留時間：2 週，最長停留時間：3 個月。機票、食宿費用全包！）</p>
                     </div>
                 </div>
             </div>
             
             <div class="highlight-card">
-                <h2>沒有容量限制</h2>
+                <h2>沒有人數限制</h2>
                 <p>每個達到 100 小時的人都可以參加。我們歡迎所有符合條件的創作者！</p>
             </div>
             
             <div class="cta-section">
                 <h2>還有問題嗎？</h2>
-                <p>查看我們的常見問題頁面，了解更多關於 Neighborhood 計劃的詳細信息。</p>
+                <p>查看我們的常見問題頁面，了解更多關於 Neighborhood 計劃的詳細資訊。</p>
                 <a href="faq.html" class="btn">查看常見問題</a>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html> 
