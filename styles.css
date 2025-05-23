@@ -1067,13 +1067,14 @@ ol li::marker {
     
     .requirements-list li {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
         gap: 15px;
+        align-items: flex-start;
     }
     
     .req-icon {
-        margin: 0 auto;
-        align-self: center;
+        margin: 0;
+        align-self: flex-start;
     }
     
     .steps-container::before {
@@ -1165,6 +1166,18 @@ ol li::marker {
     
     .steps-container::before {
         display: none;
+    }
+    
+    .requirements-list li {
+        flex-direction: column;
+        text-align: left;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .req-icon {
+        margin: 0;
+        align-self: flex-start;
     }
 }
 
