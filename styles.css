@@ -493,6 +493,34 @@ em {
 .highlight-card {
     background-color: var(--highlight-bg);
     border-left: 4px solid var(--accent-color);
+    padding-left: 35px; /* 增加左內邊距，讓文字和邊框有更多間距 */
+    position: relative;
+}
+
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    left: 4px; /* 緊貼左邊框 */
+    top: 0;
+    bottom: 0;
+    width: 8px; /* 添加一個淺色漸變條 */
+    background: linear-gradient(to right, 
+        rgba(236, 55, 80, 0.1), 
+        transparent);
+    border-radius: 0 4px 4px 0;
+}
+
+.highlight-card h2 {
+    margin-top: 0;
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.highlight-card p {
+    margin-bottom: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
 }
 
 /* 事件網格 */
@@ -1054,23 +1082,15 @@ ol li::marker {
     
     .step-item {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
+        align-items: flex-start;
     }
     
     .step-number {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-        margin-right: 0;
-        margin-bottom: 0;
+        margin-bottom: 15px;
     }
     
     .step-content {
-        padding: 20px;
-        margin-left: 0;
-        max-width: 100%;
+        text-align: left;
     }
     
     .global-link-container {
@@ -1137,6 +1157,10 @@ ol li::marker {
     
     .step-number {
         margin-bottom: 15px;
+    }
+    
+    .step-content {
+        text-align: left;
     }
     
     .steps-container::before {
