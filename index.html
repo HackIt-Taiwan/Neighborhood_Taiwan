@@ -33,6 +33,12 @@
                     <li><a href="for-parents.html">👥 給家長</a></li>
                 </ul>
             </nav>
+            <div class="discord-link-container">
+                <a href="#" class="discord-link" id="join-community-btn">
+                    <span class="icon">💬</span>
+                    <span class="text">加入社群<br>與青少年交流</span>
+                </a>
+            </div>
             <div class="global-link-container">
                 <a href="https://neighborhood.hackclub.com/info" target="_blank" class="global-link">
                     <span class="icon">🌎</span>
@@ -46,17 +52,40 @@
                 <p class="lead">Neighborhood 是 Hack Club 在舊金山推出的住宿計劃。Hack Club 是一個美國 501(c)(3) 非營利組織，致力於支持全球超過 50,000 名高中生創作者社群。</p>
             </div>
 
+            <!-- 計劃概述 -->
             <div class="card">
-                <h1>什麼是 Neighborhood？</h1>
+                <h1>🏡 什麼是 Neighborhood？</h1>
                 <p>只要完成 100 小時的程式開發，你就可以<strong>免費在舊金山住宿最多三個月</strong>！從六月到八月，你將和來自世界各地的約 50 位*程式設計愛好者一起住在不同的房子裡——在這裡生活、工作，並與新朋友一起打造令人驚艷的應用程式。</p>
                 <p>我們會提供全額住宿與餐食支援，並補助你的機票費用，降低你跨出世界的第一步成本。歡迎全球 <strong>18 歲及以下</strong>的所有高中生參與。</p>
                 <p><em>*50 只是預估數字，Neighborhood 沒有人數限制！</em></p>
             </div>
 
-            <h1>為什麼有 Neighborhood？</h1>
-            <p>了解 Neighborhood 背後的理念和我們希望達成的目標：</p>
+            <!-- 活動理念與影片 -->
+            <h1>🎯 為什麼有 Neighborhood？</h1>
+            <p>透過影片了解 Neighborhood 背後的理念，以及我們希望為青少年創造的改變：</p>
             
             <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-video-container">
+                        <div class="video-thumbnail" data-video-id="ehH_52fzStw">
+                            <img src="https://img.youtube.com/vi/ehH_52fzStw/hqdefault.jpg" alt="Neighborhood 主題歌曲影片縮略圖" loading="lazy">
+                            <div class="play-button">
+                                <svg width="68" height="48" viewBox="0 0 68 48" fill="none">
+                                    <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#FF0000"/>
+                                    <path d="M 45,24 27,14 27,34" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Neighborhood 主題歌曲</h3>
+                        <p>特別為 Neighborhood 活動創作的歌曲，感受這段旅程的自由與夢想。</p>
+                        <a href="https://www.youtube.com/watch?v=ehH_52fzStw&t=32s&ab_channel=HackClub" target="_blank" class="watch-link">
+                            <span class="watch-icon">🎵</span>
+                            聆聽歌曲
+                        </a>
+                    </div>
+                </div>
                 <div class="event-card">
                     <div class="event-video-container">
                         <div class="video-thumbnail" data-video-id="On9yuhuU40E">
@@ -101,9 +130,12 @@
                 </div>
             </div>
 
-            <h1>誰是 Hack Club？</h1>
-            <p>Hack Club 是一個美國 501(c)(3) 非營利組織（EIN：81-2908499），專門幫助高中生學習程式設計和開發專案。我們是全球最大的青少年主導程式設計社群，每年有超過 50,000 名學生在 Hack Club 與朋友一起建立專案。</p>
-            <p>除了線上計劃，我們還舉辦實體黑客松和冒險活動。我們過去舉辦的一些精彩活動包括：</p>
+            <!-- 組織介紹 -->
+            <h1>🌍 誰是 Hack Club？</h1>
+            <div class="card">
+                <p>Hack Club 是一個美國 501(c)(3) 非營利組織（EIN：81-2908499），專門幫助高中生學習程式設計和開發專案。我們是全球最大的青少年主導程式設計社群，每年有超過 50,000 名學生在 Hack Club 與朋友一起建立專案。</p>
+                <p>除了線上計劃，我們還舉辦實體黑客松和冒險活動。以下是我們過去舉辦的一些精彩活動：</p>
+            </div>
             <div class="events-grid">
                 <div class="event-card">
                     <div class="event-video-container">
@@ -169,12 +201,15 @@
                     </div>
                 </div>
             </div>
-            <p>...還有更多！</p>
-            <p>要了解更多關於 Hack Club 的信息，請訪問<a href="https://hackclub.com/" target="_blank">主網站</a>、<a href="https://hackclub.com/team/" target="_blank">Hack Club 團隊</a>和<a href="https://hackclub.com/philosophy/" target="_blank">Hack Club 理念</a>。</p>
+            <div class="card">
+                <p>...還有更多！</p>
+                <p>要了解更多關於 Hack Club 的信息，請訪問<a href="https://hackclub.com/" target="_blank">主網站</a>、<a href="https://hackclub.com/team/" target="_blank">Hack Club 團隊</a>和<a href="https://hackclub.com/philosophy/" target="_blank">Hack Club 理念</a>。</p>
+            </div>
 
+            <!-- 參與資格 -->
             <div class="card highlight-card">
-                <h1>誰可以參加？</h1>
-                <p>要符合 Neighborhood 的資格，你必須滿足以下條件：</p>
+                <h1>👤 誰可以參加？</h1>
+                <p>要符合 Neighborhood 的資格，你必須滿足以下條件：</p><br>
                 <ul class="requirements-list">
                     <li>
                         <div class="req-icon">👤</div>
@@ -203,8 +238,27 @@
                 </ul>
             </div>
 
-            <h1>主辦單位</h1>
-            <p>Neighborhood 由 Hack Club 職員和社群成員共同籌辦。主要籌辦人是 Thomas Stubblefield，他曾主導過其他活動，如 Juice 和 Trail。關於其他籌辦人的更多資訊將陸續公布。</p>
+            <!-- 主辦與合作 -->
+            <h1>🤝 主辦單位與合作夥伴</h1>
+            <div class="card">
+                <h2>主辦單位</h2>
+                <p>Neighborhood 由 Hack Club 員工和社群成員共同籌辦。主要籌辦人是 Thomas Stubblefield，他曾主導過其他活動，如 Juice 和 Trail。</p>
+            </div>
+            
+            <div class="card">
+                <h2>🇹🇼 HackIt × Hack Club 台灣合作夥伴</h2>
+                <p>在台灣，<a href="https://www.hackit.tw" target="_blank">HackIt</a> 很榮幸能與 Hack Club 攜手合作，為台灣青少年提供在地化的支援服務。我們是由台灣青少年自發創立的創意程式社群，致力於為 12-19 歲的年輕創作者打造展現才華的舞台。</p>
+                
+                <h3>HackIt 提供的支援：</h3>
+                <ul>
+                    <li><strong>協助推廣活動並提供諮詢</strong>：協助青少年了解 Neighborhood 計劃，提供中文化的詳細說明與指導</li>
+                    <li><strong>家長說明會</strong>：針對活動內容與安全措施，為家長提供完整說明，協助消除疑慮</li>
+                    <li><strong>舊金山在地活動規劃</strong>：組織於舊金山的行程與體驗活動，並確保青少年能夠安全地參與</li>
+                    <li><strong>資源募集與協助</strong>：努力向社會各界爭取支援，減輕青少年參與國際活動的經濟負擔</li>
+                </ul>
+                
+                <p>我們希望幫助更多台灣青少年把握這次寶貴的國際交流機會，並讓家長能放心支持孩子踏上探索世界的旅程。</p>
+            </div>
             
             <div class="cta-section">
                 <h2>準備好加入 Neighborhood 了嗎？</h2>
@@ -213,6 +267,36 @@
             </div>
         </div>
     </div>
+
+    <!-- 社群選擇彈出視窗 -->
+    <div class="community-modal" id="community-modal">
+        <div class="community-modal-overlay"></div>
+        <div class="community-modal-content">
+            <div class="community-modal-header">
+                <h3>選擇加入社群</h3>
+                <button class="community-modal-close" id="community-modal-close">&times;</button>
+            </div>
+            <div class="community-options">
+                <a href="https://hackclub.com/slack/" target="_blank" class="community-option">
+                    <div class="community-icon">🌍</div>
+                    <div class="community-info">
+                        <h4>Hack Club Slack</h4>
+                        <p>加入全球 50,000+ 青少年創作者社群</p>
+                    </div>
+                    <div class="community-arrow">→</div>
+                </a>
+                <a href="https://discord.gg/B3GpGhTKZG" target="_blank" class="community-option">
+                    <div class="community-icon">🇹🇼</div>
+                    <div class="community-info">
+                        <h4>HackIt 台灣社群</h4>
+                        <p>與台灣青少年創作者一起交流</p>
+                    </div>
+                    <div class="community-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html> 

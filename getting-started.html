@@ -33,6 +33,12 @@
                     <li><a href="for-parents.html">👥 給家長</a></li>
                 </ul>
             </nav>
+            <div class="discord-link-container">
+                <a href="#" class="discord-link" id="join-community-btn">
+                    <span class="icon">💬</span>
+                    <span class="text">加入社群<br>與青少年交流</span>
+                </a>
+            </div>
             <div class="global-link-container">
                 <a href="https://neighborhood.hackclub.com/info/getting-started" target="_blank" class="global-link">
                     <span class="icon">🌎</span>
@@ -51,7 +57,7 @@
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>加入 Slack 社群</h3>
-                        <p>透過<a href="https://hackclub.com/slack/" target="_blank">官網</a>註冊加入我們的 Slack 社群，並按照 #slack-welcome-start 頻道中的流程操作。這是你開始的第一步，也是與我們社群連結的主要方式。</p>
+                        <p>透過<a href="https://hackclub.com/slack/" target="_blank">官網</a>註冊加入我們的 Slack 社群，並按照 #slack-welcome-start 頻道中的流程操作。這是你開始的第一步，也是與我們社群連結的主要方式。同時也歡迎您至 <a href="https://discord.gg/B3GpGhTKZG" target="_blank">HackIt Discord 社群</a>與來自全國各地的台灣青少年共同交流！</p>
                     </div>
                 </div>
                 
@@ -108,6 +114,11 @@
                 <h2>沒有人數限制</h2>
                 <p>每個達到 100 小時的人都可以參加。我們歡迎所有符合條件的創作者！</p>
             </div>
+
+            <div class="card">
+                <h1>需要協助嗎？</h1>
+                <p>如果你在申請過程中遇到任何問題，或是想了解更多關於 Neighborhood 的資訊，歡迎至 <a href="https://discord.gg/B3GpGhTKZG" target="_blank">HackIt Discord 社群</a>進行詢問！我們是台灣的青少年<a href="https://www.hackit.tw" target="_blank">創意程式社群</a>，很樂意為同樣熱愛創作的夥伴提供協助。</p>
+            </div>
             
             <div class="cta-section">
                 <h2>還有問題嗎？</h2>
@@ -116,6 +127,36 @@
             </div>
         </div>
     </div>
+
+    <!-- 社群選擇彈出視窗 -->
+    <div class="community-modal" id="community-modal">
+        <div class="community-modal-overlay"></div>
+        <div class="community-modal-content">
+            <div class="community-modal-header">
+                <h3>選擇加入社群</h3>
+                <button class="community-modal-close" id="community-modal-close">&times;</button>
+            </div>
+            <div class="community-options">
+                <a href="https://hackclub.com/slack/" target="_blank" class="community-option">
+                    <div class="community-icon">🌍</div>
+                    <div class="community-info">
+                        <h4>Hack Club Slack</h4>
+                        <p>加入全球 50,000+ 青少年創作者社群</p>
+                    </div>
+                    <div class="community-arrow">→</div>
+                </a>
+                <a href="https://discord.gg/B3GpGhTKZG" target="_blank" class="community-option">
+                    <div class="community-icon">🇹🇼</div>
+                    <div class="community-info">
+                        <h4>HackIt 台灣社群</h4>
+                        <p>與台灣青少年創作者一起交流</p>
+                    </div>
+                    <div class="community-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html> 

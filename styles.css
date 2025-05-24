@@ -250,9 +250,240 @@ nav a.main-link {
     color: var(--text-dark);
 }
 
-.global-link-container {
+/* Discord 社群連結樣式 */
+.discord-link-container {
     margin-top: auto;
-    padding-top: 20px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+.discord-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    background-color: rgba(114, 137, 218, 0.1);
+    border: 1px solid rgba(114, 137, 218, 0.3);
+    margin-bottom: 10px;
+}
+
+.discord-link:hover {
+    background-color: rgba(114, 137, 218, 0.2);
+    transform: translateY(-1px);
+    border-color: rgba(114, 137, 218, 0.5);
+}
+
+.discord-link .icon {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.discord-link .text {
+    font-weight: 500;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.discord-link:hover::after {
+    width: 0;
+}
+
+/* 深色主題下的 Discord 連結 */
+[data-theme="dark"] .discord-link {
+    background-color: rgba(114, 137, 218, 0.15);
+    border-color: rgba(114, 137, 218, 0.4);
+}
+
+[data-theme="dark"] .discord-link:hover {
+    background-color: rgba(114, 137, 218, 0.25);
+    border-color: rgba(114, 137, 218, 0.6);
+}
+
+/* 社群選擇彈出視窗 */
+.community-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.community-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.community-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.community-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: var(--card-bg);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.community-modal.show .community-modal-content {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.community-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-warm);
+}
+
+.community-modal-header h3 {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.community-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-color);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.community-modal-close:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.community-options {
+    padding: 8px;
+}
+
+.community-option {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: var(--text-dark);
+    border-radius: 16px;
+    margin: 8px 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.community-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--bg-warm-hover), var(--bg-warm-active));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.community-option:hover::before {
+    opacity: 1;
+}
+
+.community-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.community-icon {
+    font-size: 2.2rem;
+    margin-right: 18px;
+    z-index: 1;
+    position: relative;
+}
+
+.community-info {
+    flex: 1;
+    z-index: 1;
+    position: relative;
+}
+
+.community-info h4 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+}
+
+.community-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.community-arrow {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    position: relative;
+}
+
+.community-option:hover .community-arrow {
+    transform: translateX(4px);
+    color: var(--accent-color);
+}
+
+.community-option:hover:after {
+    width: 0;
+}
+
+/* 深色主題下的彈出視窗 */
+[data-theme="dark"] .community-modal-overlay {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="dark"] .community-option::before {
+    background: linear-gradient(135deg, var(--bg-warm-hover), var(--bg-warm-active));
+}
+
+.global-link-container {
+    padding-top: 10px;
 }
 
 .global-link {
@@ -1094,15 +1325,63 @@ ol li::marker {
         text-align: left;
     }
     
+    .discord-link-container {
+        margin-top: 30px; /* 增加上方間距 */
+        padding-top: 20px; /* 增加內邊距 */
+        margin-bottom: 15px;
+    }
+    
+    .discord-link {
+        padding: 14px 18px; /* 增加 Discord 連結的內邊距 */
+        font-size: 0.95rem; /* 調整字體大小 */
+        margin-bottom: 12px;
+    }
+    
+    .discord-link .text {
+        font-size: 0.9rem;
+    }
+    
+    /* 手機版彈出視窗調整 */
+    .community-modal-content {
+        width: 95%;
+        max-width: none;
+        margin: 0 10px;
+    }
+    
+    .community-modal-header {
+        padding: 20px 24px 16px;
+    }
+    
+    .community-modal-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .community-option {
+        padding: 18px 20px;
+        margin: 6px 0;
+    }
+    
+    .community-icon {
+        font-size: 2rem;
+        margin-right: 16px;
+    }
+    
+    .community-info h4 {
+        font-size: 1rem;
+    }
+    
+    .community-info p {
+        font-size: 0.85rem;
+    }
+    
     .global-link-container {
-        margin-top: 35px; /* 大幅增加上方間距 */
-        padding-top: 25px; /* 增加內邊距 */
+        padding-top: 10px; /* 減少內邊距，因為上面已有 Discord 連結 */
     }
     
     .global-link {
         padding: 16px 20px; /* 增加全球連結的內邊距 */
         font-size: 1rem; /* 調整字體大小 */
-        margin-top: 10px; /* 添加上邊距 */
+        margin-top: 5px; /* 減少上邊距 */
     }
     
     .header-section h1 {
@@ -1178,6 +1457,22 @@ ol li::marker {
     .req-icon {
         margin: 0;
         align-self: flex-start;
+    }
+    
+    .discord-link-container {
+        margin-top: 25px; /* 小螢幕上的間距 */
+        padding-top: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .discord-link {
+        padding: 12px 16px; /* 小螢幕上的內邊距 */
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+    
+    .discord-link .text {
+        font-size: 0.85rem;
     }
 }
 

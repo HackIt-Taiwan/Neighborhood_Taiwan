@@ -33,6 +33,12 @@
                     <li><a href="for-parents.html" class="active">👥 給家長</a></li>
                 </ul>
             </nav>
+            <div class="discord-link-container">
+                <a href="#" class="discord-link" id="join-community-btn">
+                    <span class="icon">💬</span>
+                    <span class="text">加入社群<br>與青少年交流</span>
+                </a>
+            </div>
             <div class="global-link-container">
                 <a href="https://neighborhood.hackclub.com/info/for-parents" target="_blank" class="global-link">
                     <span class="icon">🌎</span>
@@ -58,6 +64,18 @@
             <p>Neighborhood 是一個為期 3 個月的住宿計劃，由 Hack Clubbers 為 Hack Clubbers 籌辦。參與者將受邀留在舊金山的 Neighborhood，只要他們每週至少花 40 小時創建出色的應用程式，停留期間最短 2 週，最長 3 個月。</p>
             <p>機票、食宿費用將獲得補助。這個計劃採用補助金制度，歡迎來自世界各地<strong>18 歲及以下</strong>的所有高中生參與。</p>
             <p>Neighborhood 是一個<strong>無人監督的計劃</strong>。除了住在提供的住宿外，學生可以自由探索城市並決定自己的日常行程。我們每週會面一次，發布和展示我們的專案。</p>
+
+            <h1>台灣區域合作夥伴 - HackIt</h1>
+            <p>為了讓台灣的家長和青少年獲得更好的支援，台灣本地的青少年創意程式社群 <a href="https://www.hackit.tw" target="_blank">HackIt</a> 與 Hack Club 建立了合作關係。我們是由一群熱心的台灣青少年創立，專注於為年輕創作者提供展現才華的平台。</p>
+            <p><strong>HackIt 為台灣參與者提供的專屬服務：</strong></p>
+            <ul>
+                <li><strong>中文諮詢服務</strong>：提供完整的中文說明與一對一諮詢，幫助您的孩子了解申請流程</li>
+                <li><strong>家長說明會</strong>：定期舉辦線上與線下說明會，詳細解答關於安全、費用、簽證等各項疑慮</li>
+                <li><strong>行前準備輔導</strong>：協助您的孩子做好赴美前的各項準備，包含文化適應與實用技能</li>
+                <li><strong>在美期間關懷</strong>：為台灣青少年規劃專屬的交流活動，並提供必要時的中文協助</li>
+                <li><strong>經濟支援努力</strong>：積極向企業與社會機構尋求贊助，減輕家庭經濟負擔</li>
+            </ul>
+            <p>透過這樣的在地化支援，我們確保您的孩子在參與國際活動的過程中，能夠獲得最貼心且專業的照顧。</p>
 
             <h1>誰可以參加？</h1>
             <p>為了讓您的孩子符合 Neighborhood 的資格，必須滿足以下條件：</p>
@@ -89,9 +107,39 @@
             <p>關於住宿和地點的更多詳細資訊將在我們獲得完整資訊後儘快分享。參與者將一起住在房子裡，與其他 Hack Clubbers 共享房間。選定的房屋都位於安全、經過審查的區域。</p>
 
             <h1>更多資訊...</h1>
-            <p>更多資訊可以在<a href="faq.html">常見問題</a>頁面找到。如果您有進一步的疑問，您也可以聯繫 thomas@hackclub.com 進行諮詢。</p>
+            <p>更多資訊可以在<a href="faq.html">常見問題</a>頁面找到。如果您有進一步的疑問，您也可以聯繫 thomas@hackclub.com 進行諮詢。同時也歡迎您的孩子至 <a href="https://discord.gg/B3GpGhTKZG" target="_blank">HackIt Discord 社群</a>與來自全國各地的台灣青少年共同交流！</p>
         </div>
     </div>
+
+    <!-- 社群選擇彈出視窗 -->
+    <div class="community-modal" id="community-modal">
+        <div class="community-modal-overlay"></div>
+        <div class="community-modal-content">
+            <div class="community-modal-header">
+                <h3>選擇加入社群</h3>
+                <button class="community-modal-close" id="community-modal-close">&times;</button>
+            </div>
+            <div class="community-options">
+                <a href="https://hackclub.com/slack/" target="_blank" class="community-option">
+                    <div class="community-icon">🌍</div>
+                    <div class="community-info">
+                        <h4>Hack Club Slack</h4>
+                        <p>加入全球 50,000+ 青少年創作者社群</p>
+                    </div>
+                    <div class="community-arrow">→</div>
+                </a>
+                <a href="https://discord.gg/B3GpGhTKZG" target="_blank" class="community-option">
+                    <div class="community-icon">🇹🇼</div>
+                    <div class="community-info">
+                        <h4>HackIt 台灣社群</h4>
+                        <p>與台灣青少年創作者一起交流</p>
+                    </div>
+                    <div class="community-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html> 

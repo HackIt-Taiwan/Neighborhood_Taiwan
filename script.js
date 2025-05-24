@@ -411,6 +411,79 @@ class PerformanceManager {
     }
 }
 
+// 社群彈出視窗管理系統
+class CommunityModalManager {
+    constructor() {
+        this.modal = null;
+        this.isOpen = false;
+        this.init();
+    }
+
+    init() {
+        this.modal = document.getElementById('community-modal');
+        this.bindEvents();
+    }
+
+    bindEvents() {
+        // 開啟彈出視窗按鈕
+        const joinBtn = document.getElementById('join-community-btn');
+        joinBtn?.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.openModal();
+        });
+
+        // 關閉按鈕
+        const closeBtn = document.getElementById('community-modal-close');
+        closeBtn?.addEventListener('click', () => this.closeModal());
+
+        // 覆蓋層點擊關閉
+        const overlay = this.modal?.querySelector('.community-modal-overlay');
+        overlay?.addEventListener('click', () => this.closeModal());
+
+        // ESC 鍵關閉
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isOpen) {
+                this.closeModal();
+            }
+        });
+
+        // 社群選項點擊後關閉彈出視窗
+        const communityOptions = this.modal?.querySelectorAll('.community-option');
+        communityOptions?.forEach(option => {
+            option.addEventListener('click', () => {
+                // 延遲關閉，讓用戶看到點擊效果
+                setTimeout(() => this.closeModal(), 150);
+            });
+        });
+    }
+
+    openModal() {
+        if (!this.modal) return;
+        
+        this.isOpen = true;
+        this.modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        
+        // 聚焦到第一個社群選項，提升無障礙體驗
+        setTimeout(() => {
+            const firstOption = this.modal.querySelector('.community-option');
+            firstOption?.focus();
+        }, 300);
+    }
+
+    closeModal() {
+        if (!this.modal) return;
+        
+        this.isOpen = false;
+        this.modal.classList.remove('show');
+        document.body.style.overflow = '';
+        
+        // 將焦點返回到觸發按鈕
+        const joinBtn = document.getElementById('join-community-btn');
+        joinBtn?.focus();
+    }
+}
+
 // 初始化所有管理器
 document.addEventListener('DOMContentLoaded', () => {
     new ThemeManager();
@@ -419,6 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new VideoManager();
     new LoadingAnimationManager();
     new PerformanceManager();
+    new CommunityModalManager();
 });
 
 // 錯誤處理

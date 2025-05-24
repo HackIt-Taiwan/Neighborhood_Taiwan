@@ -33,6 +33,12 @@
                     <li><a href="for-parents.html">👥 給家長</a></li>
                 </ul>
             </nav>
+            <div class="discord-link-container">
+                <a href="#" class="discord-link" id="join-community-btn">
+                    <span class="icon">💬</span>
+                    <span class="text">加入社群<br>與青少年交流</span>
+                </a>
+            </div>
             <div class="global-link-container">
                 <a href="https://neighborhood.hackclub.com/info/faq" target="_blank" class="global-link">
                     <span class="icon">🌎</span>
@@ -50,6 +56,7 @@
                 <li><a href="#flights-cost">機票、費用與停留時間</a></li>
                 <li><a href="#in-person-stay">實體住宿</a></li>
                 <li><a href="#visa-passport">簽證、護照與入境</a></li>
+                <li><a href="#taiwan-support">台灣區域支援</a></li>
                 <li><a href="#more-questions">更多問題？</a></li>
             </ul>
 
@@ -91,10 +98,46 @@
             <p><strong>我們申請什麼樣的簽證？</strong> 很遺憾，這個計劃不適用於教育簽證，如 J1 等。你需要申請 B1/B2 簽證。</p>
             <p><strong>簽證費用會得到補助嗎？</strong> 如果簽證費用在參加者獲得的機票補助金額範圍內，該計畫有可能會提供報銷。然而，辦理簽證仍然是參加者自己的責任。</p>
 
+            <h1 id="taiwan-support">台灣區域支援</h1>
+            <p><strong>台灣有專門的協助嗎？</strong> 是的！台灣青少年創意程式社群 <a href="https://www.hackit.tw" target="_blank">HackIt</a> 與 Hack Club 合作，為台灣參與者提供專屬的中文支援服務。</p>
+            <p><strong>HackIt 會提供什麼協助？</strong> HackIt 提供申請流程諮詢、家長說明會、行前準備輔導、在美期間的文化活動規劃，以及緊急時的中文協助。他們也積極向社會各界爭取資源，減輕參與者的經濟負擔。</p>
+            <p><strong>如何聯繫 HackIt 團隊？</strong> 你可以透過 <a href="https://discord.gg/B3GpGhTKZG" target="_blank">HackIt Discord 社群</a>與團隊聯繫，或是參與他們定期舉辦的線上說明會。</p>
+            <p><strong>HackIt 收費嗎？</strong> 不收費！HackIt 是非營利性質的青少年社群，所有支援服務都是免費提供的。</p>
+
             <h1 id="more-questions">更多問題？</h1>
-            <p>如果你有任何問題，請加入 Hack Club Slack 上的 #neighborhood 頻道！</p>
+            <p>如果你有任何問題，請加入 Hack Club Slack 上的 #neighborhood 頻道！同時也歡迎您至 <a href="https://discord.gg/B3GpGhTKZG" target="_blank">HackIt Discord 社群</a>與來自全國各地的台灣青少年共同交流討論！</p>
         </div>
     </div>
+
+    <!-- 社群選擇彈出視窗 -->
+    <div class="community-modal" id="community-modal">
+        <div class="community-modal-overlay"></div>
+        <div class="community-modal-content">
+            <div class="community-modal-header">
+                <h3>選擇加入社群</h3>
+                <button class="community-modal-close" id="community-modal-close">&times;</button>
+            </div>
+            <div class="community-options">
+                <a href="https://hackclub.com/slack/" target="_blank" class="community-option">
+                    <div class="community-icon">🌍</div>
+                    <div class="community-info">
+                        <h4>Hack Club Slack</h4>
+                        <p>加入全球 50,000+ 青少年創作者社群</p>
+                    </div>
+                    <div class="community-arrow">→</div>
+                </a>
+                <a href="https://discord.gg/B3GpGhTKZG" target="_blank" class="community-option">
+                    <div class="community-icon">🇹🇼</div>
+                    <div class="community-info">
+                        <h4>HackIt 台灣社群</h4>
+                        <p>與台灣青少年創作者一起交流</p>
+                    </div>
+                    <div class="community-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html> 
